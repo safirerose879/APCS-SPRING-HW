@@ -1,0 +1,35 @@
+import java.io.*;
+import java.util.*;
+
+public class merge{
+    public ArrayList<String> merge(ArrayList<String> a, ArrayList<String> b){
+	ArrayList<String> result = new ArrayList<String>;
+	int ia = o, ib = 0;
+	int i = 0;
+	while (ia < a.size() && ib < b.size()){
+	    if (a.get(ia) < b.get(ib)){
+		result.add(a.get(ia));
+		ia = ia + 1;
+	    }
+	    else {
+		result.add(b.get(ib));
+		ib = ib + 1;
+	    }
+	}
+	if (ia >= a.size()){
+	    for (;i<result.size();i++){
+		result.add(b.get(ib));
+		ib = ib + 1;
+	    }
+	}
+	else {
+	    for (;i<result.size();i++){
+		result.add(a.get(ia));
+		ia = ia + 1;
+	    }
+	}
+	return result;
+    }
+
+ 
+}
