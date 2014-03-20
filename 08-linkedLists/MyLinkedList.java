@@ -90,6 +90,38 @@ public class MyLinkedList {
 	return ret;
     }
 
+    /*remove:
+i=0;
+tmp = head;
+while (i<n-1){
+tmp = tmp.getNext();
+i = i +1;
+}
+tmp.setNext(tmp.getNext().getNext());
+
+head->0->1->2->3...
+
+empty list
+head=>Dummy(null)
+head->dummy->0->1->2->3...
+
+
+PIGGYBACKING POINTERS
+i = 0
+tmp = head.getNext();
+t2=head;
+while(i<n){
+t2 = tmp;
+tmp = tmp.getNext()
+i = i + 1;
+
+//tmp is at event point
+//t2 is one before
+
+t2 = tmp.getNext() OR t2.setNext(tmp.getNext()) OR t2.setNext(t2.getNext().getNext());
+}
+     */
+
     public int find(String s){
 	int count = 0;
 	int fin = 0;
