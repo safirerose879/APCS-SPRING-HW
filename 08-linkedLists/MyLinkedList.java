@@ -12,13 +12,23 @@ public class MyLinkedList {
 	head=tmp;
 	
     }
-    public String toString() {
+    /*    public String toString() {
 	String s= "";
        	while(head != null) {
 	    //  tmp = new (tmp.getNext());
 	    Node tmp = head.getNext();
 	    head = tmp;
 	    s = " " + tmp;
+	}
+	return s;
+	}*/
+
+    public String toString(){
+	String s = "";
+	Node temp = head;
+	while (temp!=null){
+	    s+=temp + " ";
+	    temp = temp.getNext();
 	}
 	return s;
     }
@@ -102,5 +112,15 @@ public class MyLinkedList {
 	}
 	return count + 1;
     }
+
+    public int size(){
+	return length;
+    }
+
+    /*
+METHOD 1: use a loop a la toString to calculate the length and return it.***Easier to maintain. (O)n*** 
+METHOD 2: make a length instance variable. Add 1 to length in add routines. Subtract 1 from length in remove routines. size() just returns length.
+***SLIGHTLY FASTER (O)k (constant) AMORTIZED-calculate use or money over time*** 
+     */
 
 }
