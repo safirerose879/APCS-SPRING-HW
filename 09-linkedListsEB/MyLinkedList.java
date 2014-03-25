@@ -7,10 +7,18 @@ public class MyLinkedList {
     }
     
     public void add(String d) {
-	Node tmp = new Node(d);
+	/*Node tmp = new Node(d);
 	tmp.setNext(head);
 	head=tmp;
-	
+	*/
+
+	//adds to end
+	Node tmp = new Node (d);
+        Node tmp2 = head.getNext();
+	while (tmp2 != null){
+	    tmp2 = tmp2.getNext();
+	}
+	tmp2.setNext(tmp);
     }
     /*    public String toString() {
 	String s= "";
@@ -35,11 +43,17 @@ public class MyLinkedList {
 
     public void add (int i, String d){
 	Node tmp = new Node (d);
-        Node tmp2 = head.getNext();
-	while (tmp2 != null){
-	    tmp2 = tmp2.getNext();
+	for(int a = 0; a <= i; i++){
+	    Node tmptmp = head.getNext();
+	    head = tmptmp;
+	    if (a == i-1){
+		tmptmp.setNext(head.getNext());
+		head.setNext(tmptmp);
+	    }
+	    if (tmptmp.getNext() == null){
+		System.out.println("You're outta bounds");
+	    }
 	}
-	tmp2.setNext(tmp);
     }
 
     public String get(int i){
