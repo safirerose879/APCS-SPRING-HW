@@ -35,17 +35,11 @@ public class MyLinkedList {
 
     public void add (int i, String d){
 	Node tmp = new Node (d);
-	for(int a = 0; a <= i; i++){
-	    Node tmptmp = head.getNext();
-	    head = tmptmp;
-	    if (a == i-1){
-		tmptmp.setNext(head.getNext());
-		head.setNext(tmptmp);
-	    }
-	    if (tmptmp.getNext() == null){
-		System.out.println("You're outta bounds");
-	    }
+        Node tmp2 = head.getNext();
+	while (tmp2 != null){
+	    tmp2 = tmp2.getNext();
 	}
+	tmp2.setNext(tmp);
     }
 
     public String get(int i){
