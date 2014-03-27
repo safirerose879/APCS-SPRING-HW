@@ -1,3 +1,5 @@
+//Shein Htike & Emma Lou
+
 public class DoubleLL<E>{
 	private class Node<E>{
 		E data;
