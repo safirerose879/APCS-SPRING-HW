@@ -1,2 +1,44 @@
 import java.io.*;
 import java.util.*;
+
+public class MyStack{
+
+    private int top;
+    private String[]stack;
+    
+    public MyStack(){
+	top = 0;
+	stack = new String[10];
+    }
+
+    public void push(String s){
+	if (top<stack.length){
+            stack[top] = s;
+            top++;
+        }
+        else{
+	    stack = Arrays.copyOf(stack,stack.length * 2);
+	    push(s);
+        }
+    }
+
+    public String pop(){
+	String tmp = stack[top];
+	stack[top] = null;
+	top--;
+	return tmp;
+    }
+
+    public String peek(){
+	return stack[top];
+    }
+
+    public String toString(){
+	String s = "";
+	for (int i = 0; i < len; i++){
+	    s = s + stack[i] + ", ";
+	}
+	return s;
+    }
+}
+
