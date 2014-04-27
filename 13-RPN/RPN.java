@@ -11,7 +11,7 @@ public class RPN{
 		numElts = 0;
     }
 
-    public void push(String s){
+    public void push(String s){s
 		Node n = new Node(s);
 		n.setNext(top);
 		top = n;
